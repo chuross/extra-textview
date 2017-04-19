@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.chuross.widget.ExtraTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:ext_txt_drawable="@drawable/ic_action_name"
+        app:ext_txt_drawableTint="@android:color/holo_green_dark"
+        app:ext_txt_drawablePosition="top"
+        android:text="tint + position(top) + auto drawable resizing"
+        android:textSize="16sp"
+        android:textColor="@android:color/white" />
+
+    <com.github.chuross.widget.ExtraTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:ext_txt_drawable="@drawable/ic_action_name"
+        app:ext_txt_drawableTint="@android:color/holo_orange_dark"
+        app:ext_txt_drawablePosition="top"
+        app:ext_txt_drawableWidth="32dp"
+        app:ext_txt_drawableHeight="32dp"
+        android:text="tint + position(left) + fix size"
+        android:textSize="16sp"
+        android:textColor="@android:color/white" />
+
+    <com.github.chuross.widget.ExtraTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:ext_txt_drawable="@drawable/ic_action_name"
+        app:ext_txt_drawableTint="@android:color/holo_purple"
+        app:ext_txt_drawablePosition="top"
+        app:ext_txt_cornerRadius="8dp"
+        app:ext_txt_cornerBorderColor="@android:color/holo_purple"
+        app:ext_txt_cornerBorderSize="1dp"
+        android:text="tint + position(right) + corner(border only)"
+        android:textColor="@android:color/white" />
+
+    <com.github.chuross.widget.ExtraTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:ext_txt_drawable="@drawable/ic_action_name"
+        app:ext_txt_drawableTint="@android:color/holo_red_dark"
+        app:ext_txt_drawablePosition="top"
+        app:ext_txt_cornerBackgroundColor="@android:color/holo_red_dark"
+        android:text="tint + position(bottom) + corner(background only)"
+        android:textColor="@android:color/white" />
+</LinearLayout>

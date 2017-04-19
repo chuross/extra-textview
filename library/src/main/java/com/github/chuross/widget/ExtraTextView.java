@@ -63,7 +63,7 @@ public class ExtraTextView extends AppCompatTextView {
         drawableTint = typedArray.getColor(R.styleable.ExtraTextView_ext_txt_drawableTint, 0);
 
         roundedCornerRadius = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_cornerRadius, 0);
-        roundedCornerBorderSize = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_cornerSize, 0);
+        roundedCornerBorderSize = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_cornerBorderSize, 0);
         roundedCornerBorderColor = typedArray.getColor(R.styleable.ExtraTextView_ext_txt_cornerBorderColor, Color.TRANSPARENT);
         roundedCornerBackgroundColor = typedArray.getColor(R.styleable.ExtraTextView_ext_txt_cornerBackgroundColor, Color.TRANSPARENT);
 

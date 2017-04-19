@@ -5,14 +5,14 @@
         <attr name="ext_txt_drawableWidth" format="dimension" />
         <attr name="ext_txt_drawableHeight" format="dimension" />
         <attr name="ext_txt_drawablePosition" format="enum">
-            <enum name="left">0</enum>
-            <enum name="top">1</enum>
-            <enum name="right">2</enum>
-            <enum name="bottom">3</enum>
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
         </attr>
         <attr name="ext_txt_drawableTint" format="color" />
         <attr name="ext_txt_cornerRadius" format="dimension" />
-        <attr name="ext_txt_cornerSize" format="dimension" />
+        <attr name="ext_txt_cornerBorderSize" format="dimension" />
         <attr name="ext_txt_cornerBorderColor" format="color" />
         <attr name="ext_txt_cornerBackgroundColor" format="color" />
     </declare-styleable>
