@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExtraTextView">
+        <attr name="ext_txt_drawable" format="reference" />
+        <attr name="ext_txt_drawableWidth" format="dimension" />
+        <attr name="ext_txt_drawableHeight" format="dimension" />
+        <attr name="ext_txt_drawablePosition" format="enum">
+            <enum name="left">0</enum>
+            <enum name="top">1</enum>
+            <enum name="right">2</enum>
+            <enum name="bottom">3</enum>
+        </attr>
+        <attr name="ext_txt_drawableTint" format="color" />
+        <attr name="ext_txt_cornerRadius" format="dimension" />
+        <attr name="ext_txt_cornerSize" format="dimension" />
+        <attr name="ext_txt_cornerBorderColor" format="color" />
+        <attr name="ext_txt_cornerBackgroundColor" format="color" />
+    </declare-styleable>
+</resources>
