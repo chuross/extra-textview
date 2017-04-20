@@ -60,7 +60,7 @@ public class ExtraTextView extends AppCompatTextView {
         drawableWidth = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_drawableWidth, 0);
         drawableHeight = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_drawableHeight, 0);
         drawablePosition = DrawablePosition.values()[typedArray.getInt(R.styleable.ExtraTextView_ext_txt_drawablePosition, DrawablePosition.LEFT.ordinal())];
-        drawableTint = typedArray.getColor(R.styleable.ExtraTextView_ext_txt_drawableTint, 0);
+        drawableTint = typedArray.getColor(R.styleable.ExtraTextView_ext_txt_drawableTint, Color.TRANSPARENT);
 
         roundedCornerRadius = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_cornerRadius, 0);
         roundedCornerBorderSize = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_cornerBorderSize, 0);
@@ -72,24 +72,24 @@ public class ExtraTextView extends AppCompatTextView {
 
     @Override
     protected void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec) {
-        if(drawableResourceId == 0) {
+        if (drawableResourceId == 0) {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
             return;
         }
 
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         final Drawable drawable = ResourcesCompat.getDrawable(getResources(), drawableResourceId, null);
         updateDrawable(drawable);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     private void updateDrawable(final Drawable drawable) {
-        if(drawable == null) {
+        if (drawable == null) {
             return;
         }
 
         Drawable target = DrawableCompat.wrap(drawable);
-        if (drawableTint != 0) {
-            DrawableCompat.setTint(target.mutate(), ResourcesCompat.getColor(getResources(), drawableTint, null));
+        if (drawableTint != Color.TRANSPARENT) {
+            DrawableCompat.setTint(target.mutate(), drawableTint);
         }
 
         target.setBounds(0, 0, getDrawableWidth(), getDrawableHeight());
@@ -114,7 +114,7 @@ public class ExtraTextView extends AppCompatTextView {
     }
 
     private int getDrawableHeight() {
-        return drawableHeight > 0 ? drawableHeight : getMeasuredHeight();
+        return drawableHeight > 0 ? drawableHeight : getMeasuredWidth();
     }
 
     @Override
@@ -134,14 +134,15 @@ public class ExtraTextView extends AppCompatTextView {
 
         roundedCornerRect.set(roundedCornerBorderSize, roundedCornerBorderSize, getMeasuredWidth() - roundedCornerBorderSize, getMeasuredHeight() - roundedCornerBorderSize);
 
-        if(roundedCornerBackgroundColor != Color.TRANSPARENT) {
+        if (roundedCornerBackgroundColor != Color.TRANSPARENT) {
+            System.out.println("hoge");
             roundedCornerBackgroundPaint.setAntiAlias(true);
             roundedCornerBackgroundPaint.setColor(roundedCornerBackgroundColor);
             roundedCornerBackgroundPaint.setStyle(Paint.Style.FILL);
             canvas.drawRoundRect(roundedCornerRect, roundedCornerRadius, roundedCornerRadius, roundedCornerBackgroundPaint);
         }
 
-        if(roundedCornerBorderColor != Color.TRANSPARENT) {
+        if (roundedCornerBorderColor != Color.TRANSPARENT) {
             roundedCornerBorderPaint.setAntiAlias(true);
             roundedCornerBorderPaint.setColor(roundedCornerBorderColor);
             roundedCornerBorderPaint.setStrokeWidth(roundedCornerBorderSize);

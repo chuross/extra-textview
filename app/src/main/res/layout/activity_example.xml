@@ -1,56 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:clipToPadding="false"
+    android:padding="16dp"
+    android:scrollbarStyle="outsideOverlay">
 
-    <com.github.chuross.widget.ExtraTextView
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:ext_txt_drawable="@drawable/ic_action_name"
-        app:ext_txt_drawableTint="@android:color/holo_green_dark"
-        app:ext_txt_drawablePosition="top"
-        android:text="tint + position(top) + auto drawable resizing"
-        android:textSize="16sp"
-        android:textColor="@android:color/white" />
+        android:orientation="vertical">
 
-    <com.github.chuross.widget.ExtraTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:ext_txt_drawable="@drawable/ic_action_name"
-        app:ext_txt_drawableTint="@android:color/holo_orange_dark"
-        app:ext_txt_drawablePosition="top"
-        app:ext_txt_drawableWidth="32dp"
-        app:ext_txt_drawableHeight="32dp"
-        android:text="tint + position(left) + fix size"
-        android:textSize="16sp"
-        android:textColor="@android:color/white" />
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-    <com.github.chuross.widget.ExtraTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:ext_txt_drawable="@drawable/ic_action_name"
-        app:ext_txt_drawableTint="@android:color/holo_purple"
-        app:ext_txt_drawablePosition="top"
-        app:ext_txt_cornerRadius="8dp"
-        app:ext_txt_cornerBorderColor="@android:color/holo_purple"
-        app:ext_txt_cornerBorderSize="1dp"
-        android:text="tint + position(right) + corner(border only)"
-        android:textColor="@android:color/white" />
+            <com.github.chuross.widget.ExtraTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="HogePiyoFuga"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:ext_txt_drawable="@drawable/ic_action_name"
+                app:ext_txt_drawableHeight="32dp"
+                app:ext_txt_drawablePosition="top"
+                app:ext_txt_drawableTint="@android:color/holo_green_dark"
+                app:ext_txt_drawableWidth="32dp" />
 
-    <com.github.chuross.widget.ExtraTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:ext_txt_drawable="@drawable/ic_action_name"
-        app:ext_txt_drawableTint="@android:color/holo_red_dark"
-        app:ext_txt_drawablePosition="top"
-        app:ext_txt_cornerBackgroundColor="@android:color/holo_red_dark"
-        android:text="tint + position(bottom) + corner(background only)"
-        android:textColor="@android:color/white" />
-</LinearLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tint \n+ position(top) \n+ fix size" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.github.chuross.widget.ExtraTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="HogePiyoFuga"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:ext_txt_drawable="@drawable/ic_action_name"
+                app:ext_txt_drawableHeight="32dp"
+                app:ext_txt_drawablePosition="left"
+                app:ext_txt_drawableTint="@android:color/holo_orange_dark"
+                app:ext_txt_drawableWidth="32dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tint \n+ position(left) \n+ fix size" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.github.chuross.widget.ExtraTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="HogePiyoFuga"
+                android:textColor="@android:color/black"
+                app:ext_txt_cornerBorderColor="@android:color/holo_purple"
+                app:ext_txt_cornerBorderSize="1dp"
+                app:ext_txt_cornerRadius="12dp"
+                app:ext_txt_drawable="@drawable/ic_action_name"
+                app:ext_txt_drawableHeight="32dp"
+                app:ext_txt_drawablePosition="right"
+                app:ext_txt_drawableTint="@android:color/holo_purple"
+                app:ext_txt_drawableWidth="32dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tint \n+ position(right) \n+ corner(border only) \n+ fix size" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.github.chuross.widget.ExtraTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="HogePiyoFuga"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                app:ext_txt_cornerBackgroundColor="@android:color/holo_red_dark"
+                app:ext_txt_drawable="@drawable/ic_action_name"
+                app:ext_txt_drawableHeight="32dp"
+                app:ext_txt_drawablePosition="bottom"
+                app:ext_txt_drawableTint="@android:color/holo_red_dark"
+                app:ext_txt_drawableWidth="32dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tint \n+ position(bottom) \n+ corner(bg only) \n+ fix size" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.github.chuross.widget.ExtraTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="HogeFugaPiyo"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                app:ext_txt_drawable="@drawable/ic_action_name"
+                app:ext_txt_drawablePosition="top"
+                app:ext_txt_drawableTint="@android:color/holo_green_dark" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tint \n+ position(top) \n+ auto drawable resizing" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>
