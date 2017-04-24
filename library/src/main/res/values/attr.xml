@@ -16,4 +16,17 @@
         <attr name="ext_txt_cornerBorderColor" format="color" />
         <attr name="ext_txt_cornerBackgroundColor" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="ToggleExtraTextView">
+        <attr name="ext_txt_state" format="enum">
+            <enum name="active" value="0" />
+            <enum name="waiting" value="1" />
+            <enum name="disActive" value="2" />
+        </attr>
+        <attr name="ext_txt_activeDrawable" format="reference" />
+        <attr name="ext_txt_activeTint" format="color" />
+        <attr name="ext_txt_waitingTint" format="color" />
+        <attr name="ext_txt_idleDrawable" format="reference" />
+        <attr name="ext_txt_idleTint" format="color" />
+    </declare-styleable>
 </resources>

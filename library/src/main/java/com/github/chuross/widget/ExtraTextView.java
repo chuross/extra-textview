@@ -77,9 +77,13 @@ public class ExtraTextView extends AppCompatTextView {
             return;
         }
 
+        updateDrawable();
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    private void updateDrawable() {
         final Drawable drawable = ResourcesCompat.getDrawable(getResources(), drawableResourceId, null);
         updateDrawable(drawable);
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     private void updateDrawable(final Drawable drawable) {
@@ -123,7 +127,7 @@ public class ExtraTextView extends AppCompatTextView {
         super.onDraw(canvas);
     }
 
-    private boolean needDrawRoundCorner() {
+    protected boolean needDrawRoundCorner() {
         return roundedCornerRadius > 0 && (roundedCornerBackgroundColor != Color.TRANSPARENT || roundedCornerBorderColor != Color.TRANSPARENT);
     }
 
@@ -135,7 +139,6 @@ public class ExtraTextView extends AppCompatTextView {
         roundedCornerRect.set(roundedCornerBorderSize, roundedCornerBorderSize, getMeasuredWidth() - roundedCornerBorderSize, getMeasuredHeight() - roundedCornerBorderSize);
 
         if (roundedCornerBackgroundColor != Color.TRANSPARENT) {
-            System.out.println("hoge");
             roundedCornerBackgroundPaint.setAntiAlias(true);
             roundedCornerBackgroundPaint.setColor(roundedCornerBackgroundColor);
             roundedCornerBackgroundPaint.setStyle(Paint.Style.FILL);
@@ -149,5 +152,22 @@ public class ExtraTextView extends AppCompatTextView {
             roundedCornerBorderPaint.setStyle(Paint.Style.STROKE);
             canvas.drawRoundRect(roundedCornerRect, roundedCornerRadius, roundedCornerRadius, roundedCornerBorderPaint);
         }
+    }
+
+    public int getDrawableResourceId() {
+        return drawableResourceId;
+    }
+
+    public void setDrawableResourceId(int drawableResourceId) {
+        this.drawableResourceId =  drawableResourceId;
+        requestLayout();
+    }
+
+    public void setDrawableTint(int drawableTint) {
+        this.drawableTint = drawableTint;
+    }
+
+    public void setRoundedCornerBorderColor(int borderColor) {
+        roundedCornerBorderColor = borderColor;
     }
 }
