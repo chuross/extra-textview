@@ -170,4 +170,9 @@ public class ExtraTextView extends AppCompatTextView {
     public void setRoundedCornerBorderColor(int borderColor) {
         roundedCornerBorderColor = borderColor;
     }
+
+    public void setRoundedCornerBackgroundColor(int backgroundColor) {
+        roundedCornerBackgroundColor = backgroundColor;
+        invalidate();
+    }
 }
