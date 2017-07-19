@@ -165,9 +165,11 @@ public class ExtraTextView extends AppCompatTextView {
 
     public void setDrawableTint(int drawableTint) {
         this.drawableTint = drawableTint;
+        requestLayout();
     }
 
     public void setRoundedCornerBorderColor(int borderColor) {
         roundedCornerBorderColor = borderColor;
+        invalidate();
     }
 }
