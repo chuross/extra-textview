@@ -99,29 +99,43 @@ public class ExtraTextView extends AppCompatTextView {
         }
 
         target.setBounds(0, 0, getDrawableWidth(), getDrawableHeight());
-        Integer fitPadding = null;
-        if (isDrawableFit) {
-            float textWidth = getPaint().measureText(getText().toString());
-            fitPadding = Math.round((getMeasuredWidth() - textWidth) / 2);
-            setCompoundDrawablePadding(-fitPadding + getDrawableWidth());
-        }
 
-        switch(drawablePosition) {
+        switch (drawablePosition) {
             case TOP:
                 setCompoundDrawables(null, target, null, null);
                 break;
             case RIGHT:
                 setCompoundDrawables(null, null, target, null);
-                if (fitPadding != null) setPadding(0, getPaddingTop(), fitPadding, getPaddingBottom());
                 break;
             case BOTTOM:
                 setCompoundDrawables(null, null, null, target);
                 break;
             default:
                 setCompoundDrawables(target, null, null, null);
-                if (fitPadding != null) setPadding(fitPadding, getPaddingTop(), 0, getPaddingBottom());
                 break;
         }
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        
+        Integer fitPadding = null;
+        if (isDrawableFit) {
+            float textWidth = getPaint().measureText(getText().toString());
+            fitPadding = Math.round((getWidth() - textWidth) / 2);
+            setCompoundDrawablePadding(-fitPadding + getDrawableWidth());
+        }
+
+        switch (drawablePosition) {
+            case LEFT:
+                if (fitPadding != null) setPadding(fitPadding, getPaddingTop(), 0, getPaddingBottom());
+                break;
+            case RIGHT:
+                if (fitPadding != null) setPadding(0, getPaddingTop(), fitPadding, getPaddingBottom());
+                break;
+        }
+
     }
 
     private int getDrawableWidth() {
