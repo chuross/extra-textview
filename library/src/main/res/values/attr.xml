@@ -11,6 +11,7 @@
             <enum name="bottom" value="3" />
         </attr>
         <attr name="ext_txt_drawableTint" format="color" />
+        <attr name="ext_txt_drawableFit" format="boolean"/>
         <attr name="ext_txt_cornerRadius" format="dimension" />
         <attr name="ext_txt_cornerBorderSize" format="dimension" />
         <attr name="ext_txt_cornerBorderColor" format="color" />

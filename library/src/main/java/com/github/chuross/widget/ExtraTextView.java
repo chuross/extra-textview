@@ -21,6 +21,7 @@ public class ExtraTextView extends AppCompatTextView {
     private int drawableHeight = 0;
     private DrawablePosition drawablePosition;
     private int drawableTint = 0;
+    private boolean isDrawableFit = false;
     private final Paint roundedCornerBackgroundPaint = new Paint();
     private final Paint roundedCornerBorderPaint = new Paint();
     private final RectF roundedCornerRect = new RectF();
@@ -61,6 +62,7 @@ public class ExtraTextView extends AppCompatTextView {
         drawableHeight = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_drawableHeight, 0);
         drawablePosition = DrawablePosition.values()[typedArray.getInt(R.styleable.ExtraTextView_ext_txt_drawablePosition, DrawablePosition.LEFT.ordinal())];
         drawableTint = typedArray.getColor(R.styleable.ExtraTextView_ext_txt_drawableTint, Color.TRANSPARENT);
+        isDrawableFit = typedArray.getBoolean(R.styleable.ExtraTextView_ext_txt_drawableFit, false);
 
         roundedCornerRadius = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_cornerRadius, 0);
         roundedCornerBorderSize = typedArray.getDimensionPixelSize(R.styleable.ExtraTextView_ext_txt_cornerBorderSize, 0);
@@ -97,18 +99,27 @@ public class ExtraTextView extends AppCompatTextView {
         }
 
         target.setBounds(0, 0, getDrawableWidth(), getDrawableHeight());
+        Integer fitPadding = null;
+        if (isDrawableFit) {
+            float textWidth = getPaint().measureText(getText().toString());
+            fitPadding = Math.round((getMeasuredWidth() - textWidth) / 2);
+            setCompoundDrawablePadding(-fitPadding + getDrawableWidth());
+        }
+
         switch(drawablePosition) {
             case TOP:
                 setCompoundDrawables(null, target, null, null);
                 break;
             case RIGHT:
                 setCompoundDrawables(null, null, target, null);
+                if (fitPadding != null) setPadding(0, 0, fitPadding, 0);
                 break;
             case BOTTOM:
                 setCompoundDrawables(null, null, null, target);
                 break;
             default:
                 setCompoundDrawables(target, null, null, null);
+                if (fitPadding != null) setPadding(fitPadding, 0, 0, 0);
                 break;
         }
     }
