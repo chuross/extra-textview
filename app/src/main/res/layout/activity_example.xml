@@ -220,39 +220,60 @@
                     android:layout_height="wrap_content"
                     android:text="tint \n+ position(top) \n+ auto resizing" />
             </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.github.chuross.widget.ToggleExtraTextView
+                    android:id="@+id/toggle_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:padding="2dp"
+                    android:text="hoge fuga piyo"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    app:ext_txt_activeDrawable="@drawable/ic_action_android"
+                    app:ext_txt_activeTint="@android:color/holo_red_light"
+                    app:ext_txt_cornerBorderColor="@android:color/black"
+                    app:ext_txt_cornerBorderSize="1dp"
+                    app:ext_txt_cornerRadius="16dp"
+                    app:ext_txt_drawable="@drawable/ic_action_name"
+                    app:ext_txt_drawableHeight="16dp"
+                    app:ext_txt_drawableWidth="16dp"
+                    app:ext_txt_idleTint="@android:color/black"
+                    app:ext_txt_waitingTint="@android:color/darker_gray" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/waiting_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:text="wait" />
+
+                    <Button
+                        android:id="@+id/active_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:text="act" />
+                </LinearLayout>
+            </TableRow>
         </TableLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <com.github.chuross.widget.ToggleExtraTextView
-                android:id="@+id/toggle_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="hoge fuga piyo"
-                android:clickable="true"
-                app:ext_txt_drawable="@drawable/ic_action_name"
-                app:ext_txt_drawableWidth="16dp"
-                app:ext_txt_drawableHeight="16dp"
-                app:ext_txt_activeDrawable="@drawable/ic_action_android"
-                app:ext_txt_activeTint="@android:color/holo_red_light"
-                app:ext_txt_waitingTint="@android:color/darker_gray"
-                app:ext_txt_idleTint="@android:color/black"
-                app:ext_txt_cornerRadius="16dp"
-                app:ext_txt_cornerBorderColor="@android:color/black"
-                app:ext_txt_cornerBorderSize="1dp" />
-
-            <Button
-                android:id="@+id/waiting_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="waiting" />
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>

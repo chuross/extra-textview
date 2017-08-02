@@ -33,5 +33,16 @@ public class ExampleActivity extends AppCompatActivity {
                 }
             }
         });
+
+        findViewById(R.id.active_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (toggleText.getState().equals(ToggleExtraTextView.State.ACTIVE)) {
+                    toggleText.setState(ToggleExtraTextView.State.IDLE);
+                } else {
+                    toggleText.setState(ToggleExtraTextView.State.ACTIVE);
+                }
+            }
+        });
     }
 }
