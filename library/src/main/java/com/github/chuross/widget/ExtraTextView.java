@@ -112,14 +112,14 @@ public class ExtraTextView extends AppCompatTextView {
                 break;
             case RIGHT:
                 setCompoundDrawables(null, null, target, null);
-                if (fitPadding != null) setPadding(0, 0, fitPadding, 0);
+                if (fitPadding != null) setPadding(0, getPaddingTop(), fitPadding, getPaddingBottom());
                 break;
             case BOTTOM:
                 setCompoundDrawables(null, null, null, target);
                 break;
             default:
                 setCompoundDrawables(target, null, null, null);
-                if (fitPadding != null) setPadding(fitPadding, 0, 0, 0);
+                if (fitPadding != null) setPadding(fitPadding, getPaddingTop(), 0, getPaddingBottom());
                 break;
         }
     }

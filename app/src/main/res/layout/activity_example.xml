@@ -279,7 +279,7 @@
         <com.github.chuross.widget.ExtraTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="fit icon"
             android:textSize="12sp"
@@ -294,5 +294,23 @@
             app:ext_txt_drawableHeight="16dp"
             app:ext_txt_drawableFit="true"
             app:ext_txt_drawablePosition="right" />
+
+        <com.github.chuross.widget.ToggleExtraTextView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:padding="2dp"
+            android:text="fit icon"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:ext_txt_cornerBorderColor="@android:color/black"
+            app:ext_txt_cornerBorderSize="1dp"
+            app:ext_txt_cornerRadius="16dp"
+            app:ext_txt_drawableFit="true"
+            app:ext_txt_drawable="@drawable/ic_action_name"
+            app:ext_txt_drawableWidth="16dp"
+            app:ext_txt_drawableHeight="16dp"
+            app:ext_txt_idleTint="@android:color/holo_blue_light" />
     </LinearLayout>
 </ScrollView>
