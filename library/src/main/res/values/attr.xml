@@ -22,7 +22,7 @@
         <attr name="ext_txt_state" format="enum">
             <enum name="active" value="0" />
             <enum name="waiting" value="1" />
-            <enum name="disActive" value="2" />
+            <enum name="idle" value="2" />
         </attr>
         <attr name="ext_txt_activeDrawable" format="reference" />
         <attr name="ext_txt_activeTint" format="color" />
