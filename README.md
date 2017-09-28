@@ -49,7 +49,7 @@ latest version:
 
 ```
 dependencies {
-    compile 'com.github.chuross.extra-textview:x.x.x'
+    compile 'com.github.chuross:extra-textview:x.x.x'
 }
 ```
 
